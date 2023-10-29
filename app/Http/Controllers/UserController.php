@@ -3,14 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
     public function index(){
-        return view('user.home');
+        $news = DB::table('news')->latest('id')->limit(3)->get();
+        return view('user.home', ['news' => $news]);
     }
 
     public function news(){
+        $news = DB::table('news')->latest('id')->limit(3)->get();
         return view('user.news');
     }
 

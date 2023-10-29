@@ -6,45 +6,37 @@
 
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active">
+                @foreach($news as $id => $item)
+                    @if($id == 0)
+                        <div class="carousel-item active">
                     <div class="banner-preview">
                         <div class="banner-img">
                             <img src="img/banner-card-img.png" width="500">
                         </div>
                         <div class="banner-topic">
-                            <h1 class="banner-header-text">Renewables Jobs Nearly Doubled in Past Decade, Soared to 13.7
-                                Million in 2022
+                            <h1 class="banner-header-text">
+                                {{ $item->topic }}
                             </h1>
-                            <p class="banner_link"><a href="">Read more</a></p>
+                            <p class="banner_link"><a href="">{{ __('words.read_more') }}</a></p>
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <div class="banner-preview">
-                        <div class="banner-img">
-                            <img src="img/banner-card-img.png" width="500">
+                    @else
+                        <div class="carousel-item">
+                            <div class="banner-preview">
+                                <div class="banner-img">
+                                    <img src="img/{{ $item->photo }}" width="500">
+                                </div>
+                                <div class="banner-topic">
+                                    <h1 class="banner-header-text">
+                                        {{ $item->topic }}
+                                    </h1>
+                                    <p class="banner_link"><a href="">{{ __('words.read_more') }}</a></p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="banner-topic">
-                            <h1 class="banner-header-text">Renewables Jobs Nearly Doubled in Past Decade, Soared to 13.7
-                                Million in 2022
-                            </h1>
-                            <p class="banner_link"><a href="">Read more</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="banner-preview">
-                        <div class="banner-img">
-                            <img src="img/banner-card-img.png" width="500">
-                        </div>
-                        <div class="banner-topic">
-                            <h1 class="banner-header-text">Renewables Jobs Nearly Doubled in Past Decade, Soared to 13.7
-                                Million in 2022
-                            </h1>
-                            <p class="banner_link"><a href="">Read more</a></p>
-                        </div>
-                    </div>
-                </div>
+                    @endif
+                @endforeach
             </div>
         </div>
 
@@ -55,25 +47,25 @@
            href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"></i>
         <div class="collapse-active" id="collapseExample">
             <div>
-                <h3>Our Mission</h3>
-                <h1>Supporting <b>countries worldwide</b> in their transition to a sustainable energy future</h1>
+                <h3>{{ __('words.mission') }}</h3>
+                <h1>{{ __('words.mission_sentence') }}</h1>
             </div>
         </div>
 
         <div class="members-statistics">
             <h1>143</h1>
-            <h2>PARTNERS!</h2>
+            <h2>{{ __('words.partners') }}!</h2>
         </div>
     </div>
     <div class="card-news">
         <div class="news-header">
-            <p class="news-titles"><strong>Latest news</strong></p>
+            <p class="news-titles"><strong>{{ __('words.latest_news') }}</strong></p>
             <ul>
                 <li>
-                    <a href="#0" >Our partners</a>
+                    <a href="#0" >{{ __('words.partners') }}</a>
                 </li>
                 <li>
-                    <a href="#0">More news</a>
+                    <a href="#0">{{ __('words.more_news') }}</a>
                 </li>
             </ul>
         </div>
@@ -87,7 +79,7 @@
                 <div class="date-release-and-read-more">
                     <span>28 September 2023</span>
                     <span>|</span>
-                    <span style="cursor: pointer"><b>Read more</b></span>
+                    <span style="cursor: pointer"><b>{{ __('words.read_more') }}</b></span>
                 </div>
                 <hr>
 
@@ -99,7 +91,7 @@
                     <div class="date-release-and-read-more">
                         <span>28 September 2023</span>
                         <span>|</span>
-                        <span style="cursor: pointer"><b>Read more</b></span>
+                        <span style="cursor: pointer"><b>{{ __('words.read_more') }}</b></span>
                     </div>
                 </div>
                 <br><br>
@@ -109,7 +101,7 @@
                     <div class="date-release-and-read-more">
                         <span>28 September 2023</span>
                         <span>|</span>
-                        <span style="cursor: pointer"><b>Read more</b></span>
+                        <span style="cursor: pointer"><b>{{ __('words.read_more') }}</b></span>
                     </div>
                 </div>
             </div>
@@ -125,12 +117,12 @@
                             </svg>
             </span>
             <div class="sub-text">
-                <h3>Stay up to date</h3>
-                <p><a href="#">Subscribe to the newslatter</a></p>
+                <h3>{{ __('words.stay_up') }}</h3>
+                <p><a href="#">{{ __('words.subscription') }}</a></p>
             </div>
             <div class="com-text">
                 <p>
-                    Stories you might have missed, key data and upcoming events information straight into your mailbox
+                    {{ __('words.sub_info') }}
                 </p>
             </div>
         </div>
@@ -140,12 +132,11 @@
         <div class="recent-publications-center">
             <div class="recent-publications">
                 <div class="resent-publications-header">
-                    <h1>Resent Publications</h1>
-                    <h2>Browse all publications</h2>
+                    <h1>{{ __('words.publications') }}</h1>
+                    <h2>{{ __('words.all_pub') }}</h2>
                 </div>
                 <hr>
             </div>
-
         </div>
 
 
@@ -177,17 +168,10 @@
             </div>
         </div>
     </div>
-
-
-    </div>
-    </div>
-    </div>
-
-
     <div class="events-block">
         <div class="key-data">
             <div class="key-data-header">
-                <h1>Events</h1>
+                <h1>{{ __('words.events') }}</h1>
             </div>
             <hr>
             <div class="events">

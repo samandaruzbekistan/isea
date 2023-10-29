@@ -41,25 +41,16 @@
             </h1>
             <div class="footer-spans">
                 <div class="footer-span1">
-                    <h5>About IRENA</h5>
-                    <h5>Employment</h5>
-                    <h5><a href="user_form.php" style="color: black">Register Now</a></h5>
-                    <h5><a href="contacts.php" style="color: black">Contact</a></h5>
+                    <h5>{{ __('words.about_isea') }}</h5>
+                    <h5>{{ __('words.career') }}</h5>
+                    <h5><a href="user_form.php" style="color: black">{{ __('words.register') }}</a></h5>
                 </div>
                 <div class="footer-span2">
-                    <h5>Membership</h5>
-                    <h5>Collaborative Frameworks</h5>
-                    <h5>Partnerships</h5>
-                    <h5>Country Engagement</h5>
-                </div>
-                <div class="footer-span3">
-                    <h5>News</h5>
-                    <h5>Events</h5>
-                    <h5>Publications</h5>
-                    <h5>Education</h5>
+                    <h5><a href="contacts.php" style="color: black">{{ __('words.contact1') }}</a></h5>
+                    <h5>{{ __('words.events') }}</h5>
+                    <h5>{{ __('words.collab') }}</h5>
                 </div>
             </div>
-
         </div>
         <div class="footer-part2">
             <h1>
@@ -82,27 +73,13 @@
                 <i class="fa-brands fa-telegram" style="color: #3772d7;"></i>
             </div>
         </div>
-        <div class="footer-part3">
-            <div>
-
-            </div>
-            <div>
-                <h1>Admin</h1>
-            </div>
-        </div>
     </div>
     <div class="rights-statement-block">
         <div class="rights-statement">
             <div class="rights-statement-part1">
                 <h5>
-                    © 2011-2022 IRENA - International Renewable Energy Agency. All Rights Reserved.
+                    {{ __('words.isea_solar_panels_assoc') }}
                 </h5>
-            </div>
-            <div class="rights-statement-part2">
-                <p>
-                    * The designations employed and the presentation of materials herein do not imply the expression of any opinion whatsoever on the part of the International Renewable
-                    Energy Agency concerning the legal status of any country, territory, city or area or of its authorities, or concerning the delimitation of its frontiers or boundaries.
-                </p>
             </div>
         </div>
     </div>
